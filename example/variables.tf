@@ -6,10 +6,12 @@ variable "aws_region" {
 
 variable "project" {
   description = "Project name"
+  default = "odp-ref-arch"
 }
 
 variable "config_bucket_name" {
   description = "Config bucket name"
+  default = "XXXXXXXXXXX"
 }
 
 variable "aws_config_bucket_key_prefix" {
@@ -19,4 +21,5 @@ variable "aws_config_bucket_key_prefix" {
 
 variable "aws_account_id" {
   description = "aws account ID"
+  default = "XXXXXXXXXXX"
 }
