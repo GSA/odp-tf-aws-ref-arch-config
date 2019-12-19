@@ -4,7 +4,7 @@ provider "aws" {
 
 # IAM ROLE for AWS Config
 resource "aws_iam_role" "config" {
-  name = "config-service"
+  name = "${var.project}-config-service"
 
   assume_role_policy = <<POLICY
 {
@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "organization" {
 }
 
 resource "aws_config_configuration_recorder" "config" {
-  name     = "${project}-config-service"
+  name     = "${var.project}-config-service"
   role_arn = "${aws_iam_role.config.arn}"
   recording_group {
     all_supported                 = false
@@ -56,7 +56,7 @@ resource "aws_config_configuration_recorder" "config" {
 }
 
 resource "aws_iam_role_policy" "s3" {
-  name = "${project}-config-s3"
+  name = "${var.project}-config-s3"
   role = "${aws_iam_role.config.id}"
 
   policy = <<POLICY
@@ -81,7 +81,7 @@ POLICY
 
 #Create Recorder
 resource "aws_config_delivery_channel" "config" {
-  name           = "${project}-config-service"
+  name           = "config-service"
   s3_bucket_name = "${var.config_bucket_name}"
   s3_key_prefix  = "${var.aws_config_bucket_key_prefix}"
 
