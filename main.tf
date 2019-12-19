@@ -81,7 +81,7 @@ POLICY
 
 #Create Recorder
 resource "aws_config_delivery_channel" "config" {
-  name           = "${project}-config-service"
+  name           = "config-service"
   s3_bucket_name = "${var.config_bucket_name}"
   s3_key_prefix  = "${var.aws_config_bucket_key_prefix}"
 
