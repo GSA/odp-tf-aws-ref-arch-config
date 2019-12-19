@@ -69,8 +69,8 @@ resource "aws_iam_role_policy" "s3" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "${var.config_bucket_name}",
-        "${var.config_bucket_name}/*"
+        "arn:aws:s3:::${var.config_bucket_name}",
+        "arn:aws:s3:::${var.config_bucket_name}/*"
       ]
     }
   ]
