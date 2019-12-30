@@ -20,3 +20,7 @@ variable "aws_config_bucket_key_prefix" {
 variable "aws_account_id" {
   description = "aws account ID"
 }
+
+variable "access_bucket" {
+  description = "S3 Access Log Bucket"
+}

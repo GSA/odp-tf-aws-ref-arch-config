@@ -282,23 +282,20 @@ resource "aws_config_config_rule" "guardduty_enabled_centralized" {
 # }
 
 #s3_bucket_logging_enabled
-# resource "aws_config_config_rule" "s3_bucket_logging_enabled" {
-#   name        = "${var.project}-s3-bucket-logging-enabled"
-#   description = "Checks whether logging is enabled for your S3 buckets."
-
-#   source {
-#     owner             = "AWS"
-#     source_identifier = "S3_BUCKET_LOGGING_ENABLED"
-#   }
-
-#   input_parameters = <<EOF
-# {
-#   "targetBucket": "${var.access_bucket}"
-# }
-# EOF
-
-#   depends_on = ["aws_config_configuration_recorder.config"]
-# }
+resource "aws_config_config_rule" "s3_bucket_logging_enabled" {
+  name        = "${var.project}-s3-bucket-logging-enabled"
+  description = "Checks whether logging is enabled for your S3 buckets."
+  source {
+    owner             = "AWS"
+    source_identifier = "S3_BUCKET_LOGGING_ENABLED"
+  }
+#  input_parameters = <<EOF
+#  {
+#    "targetBucket": "${var.access_bucket}"
+#  }
+#EOF
+  depends_on = ["aws_config_configuration_recorder.config"]
+}
 
 # #iam-root-access-key-check
 # resource "aws_config_config_rule" "iam-root-access-key-check" {
