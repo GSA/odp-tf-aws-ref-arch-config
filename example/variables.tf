@@ -23,3 +23,8 @@ variable "aws_account_id" {
   description = "aws account ID"
   default = "XXXXXXXXXXX"
 }
+
+variable "access_bucket" {
+  description = "S3 Access Log Bucket"
+  default = "XXXXXXXXXXX"  
+}

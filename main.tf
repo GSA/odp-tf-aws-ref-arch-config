@@ -289,11 +289,11 @@ resource "aws_config_config_rule" "s3_bucket_logging_enabled" {
     owner             = "AWS"
     source_identifier = "S3_BUCKET_LOGGING_ENABLED"
   }
-#  input_parameters = <<EOF
-#  {
-#    "targetBucket": "${var.access_bucket}"
-#  }
-#EOF
+  #input_parameters = <<EOF
+  #{
+  #  "targetBucket": "${var.access_bucket}"
+  #}
+  #EOF
   depends_on = ["aws_config_configuration_recorder.config"]
 }
 
