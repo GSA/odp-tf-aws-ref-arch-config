@@ -1,7 +1,3 @@
-provider "aws" {
-  region     = var.aws_region
-}
-
 # IAM ROLE for AWS Config
 resource "aws_iam_role" "config" {
   name = "${var.project}-config-service"

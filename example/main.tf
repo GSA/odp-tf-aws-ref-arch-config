@@ -1,3 +1,7 @@
+provider "aws" {
+  region  = "us-east-1"
+}
+
 module "config" {
   source         = "../"
   config_bucket_name         = "${var.config_bucket_name}"
