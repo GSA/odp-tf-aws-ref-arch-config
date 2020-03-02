@@ -1,6 +1,6 @@
 # odp-tf-aws-ref-arch-config
 
-The `odp-tf-aws-ref-arch-config` module is used to configure X resources.
+The `odp-tf-aws-ref-arch-config` module is used to deploy the AWS Config service with some solid security baked into several policies.
 
 # ODP Terraform 
 
