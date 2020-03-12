@@ -77,7 +77,7 @@ jobs:
     steps:
       - checkout
       - run-terraform:
-          terraform_dir: examples
+          terraform_dir: example
           run_command: validate
       - tflint:
           terraform_dir: ./
