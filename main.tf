@@ -37,17 +37,17 @@ resource "aws_config_configuration_recorder" "config" {
     all_supported                 = false
     include_global_resource_types = false
     resource_types = [
-  	"AWS::CloudTrail::Trail",
-  	"AWS::IAM::Group",
-  	"AWS::IAM::Policy",
-  	"AWS::IAM::Role", 
-  	"AWS::IAM::User",
-  	"AWS::S3::Bucket", 
-  	"AWS::CloudWatch::Alarm",
-  	"AWS::CloudFormation::Stack",
-  	"AWS::Lambda::Function",
-  	"AWS::Config::ResourceCompliance"
-     ]
+      "AWS::CloudTrail::Trail",
+      "AWS::IAM::Group",
+      "AWS::IAM::Policy",
+      "AWS::IAM::Role",
+      "AWS::IAM::User",
+      "AWS::S3::Bucket",
+      "AWS::CloudWatch::Alarm",
+      "AWS::CloudFormation::Stack",
+      "AWS::Lambda::Function",
+      "AWS::Config::ResourceCompliance"
+    ]
   }
 }
 
